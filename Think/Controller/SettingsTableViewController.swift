@@ -44,6 +44,8 @@ class SettingsTableViewController: UITableViewController {
         
         var viewController: UIViewController
 
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         switch (listOfSettings[indexPath.row]) {
                case "Задний фон":
                 viewController = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundViewController") as! BackgroundViewController

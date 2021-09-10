@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var phrase: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        updateUI()
+
         startUI()
         hideNavigationBar()
         updateBackView()
@@ -28,10 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
-         tap.numberOfTapsRequired = 2
-         view.addGestureRecognizer(tap)
+        doubleTapp()
     }
 
     @IBAction func voiceButtonPressed(_ sender: UIBarButtonItem) {
@@ -48,25 +45,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func FavoriteButtonPressed(_ sender: Any) {
-       // performSegue(withIdentifier: "toFavorite", sender: self)
     }
     
     @IBAction func goRightPressed(_ sender: UIButton) {
         updateUI()
+        print(temporaryStorage)
     }
     
     @IBAction func goLeftPressed(_ sender: UIButton) {
         showPrevious()
+        print(temporaryStorage)
     }
     
     func showPrevious(){
-        self.phrase.text = temporaryStorage.last
         if temporaryStorage.count > 0{
-            temporaryStorage.remove(at: temporaryStorage.count-1)
+            temporaryStorage.removeLast()
+            self.phrase.text = temporaryStorage.last
         } else{
             self.phrase.text = "Пошли вдохновляться"
         }
     }
+    
     
     func updateUI(){
         self.phrase.text = self.storageBank.list.randomElement()?.text
@@ -98,14 +97,34 @@ class ViewController: UIViewController {
         }
     }
     
+    func doubleTapp(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+         tap.numberOfTapsRequired = 2
+         view.addGestureRecognizer(tap)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toFavorite"{
             let vc = segue.destination as! FavoriteTableViewController
             vc.favoritePhrases = favoriteStorage
-                        
+            vc.delegate = self
+            
             let backItem = UIBarButtonItem()
                backItem.title = "Назад"
                navigationItem.backBarButtonItem = backItem
         }
+    }
+}
+
+extension ViewController: FavoriteTableViewControllerDelegate {
+    
+    func controller(_ controller: UIViewController, didDeletePhrase phrase: String) {
+        if let index = favoriteStorage.firstIndex(of: phrase) {
+            favoriteStorage.remove(at: index)
+        }
+    }
+    
+    func controller(_ controller: UIViewController, didSelectedPhrase phrase: String) {
+        self.phrase.text = phrase
     }
 }

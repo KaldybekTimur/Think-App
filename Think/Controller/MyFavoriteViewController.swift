@@ -15,7 +15,6 @@ class MyFavoriteViewController: UIViewController {
     
     var phraseText = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         startUI()

@@ -22,6 +22,12 @@
 		982A7EF226B2953C00F1AAD3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A7EF126B2953C00F1AAD3 /* Storage.swift */; };
 		982A7EF426B2966D00F1AAD3 /* ClassicStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982A7EF326B2966D00F1AAD3 /* ClassicStorage.swift */; };
 		9871A74626B941F000B16568 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9871A74526B941F000B16568 /* MyFavoriteViewController.swift */; };
+		9895F7EA26C13619007869D3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895F7E826C13619007869D3 /* CollectionViewCell.swift */; };
+		9895F7EB26C13619007869D3 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9895F7E926C13619007869D3 /* CollectionViewCell.xib */; };
+		98A6E22E26EA2C60003C642B /* MusicViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6E22D26EA2C60003C642B /* MusicViewController + TableView.swift */; };
+		98A6E23826EA2CB0003C642B /* music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98A6E23526EA2CB0003C642B /* music2.mp3 */; };
+		98A6E23926EA2CB0003C642B /* music3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98A6E23626EA2CB0003C642B /* music3.mp3 */; };
+		98A6E23A26EA2CB0003C642B /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98A6E23726EA2CB0003C642B /* music1.mp3 */; };
 		98EAD49926B855C700F460F0 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EAD49826B855C700F460F0 /* FavoriteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,12 @@
 		982A7EF126B2953C00F1AAD3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		982A7EF326B2966D00F1AAD3 /* ClassicStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicStorage.swift; sourceTree = "<group>"; };
 		9871A74526B941F000B16568 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
+		9895F7E826C13619007869D3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9895F7E926C13619007869D3 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		98A6E22D26EA2C60003C642B /* MusicViewController + TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MusicViewController + TableView.swift"; path = "../../../../../../.Trash/MusicViewController + TableView.swift"; sourceTree = "<group>"; };
+		98A6E23526EA2CB0003C642B /* music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music2.mp3; path = ../../../music2.mp3; sourceTree = "<group>"; };
+		98A6E23626EA2CB0003C642B /* music3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music3.mp3; path = ../../../music3.mp3; sourceTree = "<group>"; };
+		98A6E23726EA2CB0003C642B /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music1.mp3; path = ../../../music1.mp3; sourceTree = "<group>"; };
 		98EAD49826B855C700F460F0 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,9 +102,11 @@
 		9821C1A126B5783600A3FB6A /* InSettingsControllers */ = {
 			isa = PBXGroup;
 			children = (
+				985FEB1F26DFB91B002C54E5 /* CollectionView */,
 				9821C19B26B577F900A3FB6A /* BackgroundViewController.swift */,
-				9821C19D26B5780500A3FB6A /* MusicViewController.swift */,
 				9821C19926B577E000A3FB6A /* FavoriteViewController.swift */,
+				9821C19D26B5780500A3FB6A /* MusicViewController.swift */,
+				98A6E22D26EA2C60003C642B /* MusicViewController + TableView.swift */,
 				9821C19F26B5781200A3FB6A /* ThemeViewController.swift */,
 			);
 			path = InSettingsControllers;
@@ -117,6 +131,7 @@
 		982A7EDC26B2801D00F1AAD3 /* Think */ = {
 			isa = PBXGroup;
 			children = (
+				98A6E23426EA2C93003C642B /* Music-Sound */,
 				9821C19426B4112000A3FB6A /* Useful files */,
 				982A7EF526B2967500F1AAD3 /* Model */,
 				9821C19226B410F400A3FB6A /* View */,
@@ -135,6 +150,25 @@
 				9821C19526B56E2200A3FB6A /* LifeStorage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		985FEB1F26DFB91B002C54E5 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9895F7E926C13619007869D3 /* CollectionViewCell.xib */,
+				9895F7E826C13619007869D3 /* CollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		98A6E23426EA2C93003C642B /* Music-Sound */ = {
+			isa = PBXGroup;
+			children = (
+				98A6E23726EA2CB0003C642B /* music1.mp3 */,
+				98A6E23526EA2CB0003C642B /* music2.mp3 */,
+				98A6E23626EA2CB0003C642B /* music3.mp3 */,
+			);
+			path = "Music-Sound";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				982A7EEA26B2801F00F1AAD3 /* LaunchScreen.storyboard in Resources */,
+				98A6E23A26EA2CB0003C642B /* music1.mp3 in Resources */,
 				982A7EE726B2801F00F1AAD3 /* Assets.xcassets in Resources */,
+				98A6E23926EA2CB0003C642B /* music3.mp3 in Resources */,
+				9895F7EB26C13619007869D3 /* CollectionViewCell.xib in Resources */,
+				98A6E23826EA2CB0003C642B /* music2.mp3 in Resources */,
 				982A7EE526B2801D00F1AAD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +254,9 @@
 				982A7EE026B2801D00F1AAD3 /* SceneDelegate.swift in Sources */,
 				9821C1A026B5781200A3FB6A /* ThemeViewController.swift in Sources */,
 				9821C19E26B5780500A3FB6A /* MusicViewController.swift in Sources */,
+				98A6E22E26EA2C60003C642B /* MusicViewController + TableView.swift in Sources */,
 				9871A74626B941F000B16568 /* MyFavoriteViewController.swift in Sources */,
+				9895F7EA26C13619007869D3 /* CollectionViewCell.swift in Sources */,
 				9821C19C26B577F900A3FB6A /* BackgroundViewController.swift in Sources */,
 				9821C19A26B577E000A3FB6A /* FavoriteViewController.swift in Sources */,
 				9821C19826B5713F00A3FB6A /* SettingsTableViewController.swift in Sources */,

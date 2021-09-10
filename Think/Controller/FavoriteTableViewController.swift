@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol FavoriteTableViewControllerDelegate: AnyObject {
+    func controller(_ controller: UIViewController, didDeletePhrase phrase: String)
+    func controller(_ controller: UIViewController, didSelectedPhrase phrase: String)
+}
+
 class FavoriteTableViewController: UITableViewController {
     @IBOutlet weak var backButton: UINavigationItem!
+    
+    public weak var delegate: FavoriteTableViewControllerDelegate?
     
     var favoritePhrases = [String]()
     
@@ -50,7 +57,9 @@ class FavoriteTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let phrase = favoritePhrases[indexPath.row]
             favoritePhrases.remove(at: indexPath.row)
+            delegate?.controller(self, didDeletePhrase: phrase)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         }
@@ -58,7 +67,9 @@ class FavoriteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       //  performSegue(withIdentifier: "toFavoriteCell", sender: self)
-        
+        let phrase = favoritePhrases[indexPath.row]
+        delegate?.controller(self, didSelectedPhrase: phrase)
+        navigationController?.popViewController(animated: true)
     }
     
     /*

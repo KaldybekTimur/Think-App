@@ -6,16 +6,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MusicViewController: UIViewController {
-
+    
+    
+    public var music = [
+        "music1",
+        "music2",
+        "music3"
+    ]
+    
+    var audioPlayer = AVAudioPlayer()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -25,5 +38,5 @@ class MusicViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+
